@@ -1,0 +1,15 @@
+.banner {
+  background-image: url('../../assets/imgs/bannerai.png');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+.generate {
+  background-image: url('../../assets/imgs/girlai.png');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}

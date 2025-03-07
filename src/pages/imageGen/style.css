@@ -1,0 +1,7 @@
+.generator-bg {
+  background-image: url("../../assets/imgs/bg.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
