@@ -21,7 +21,7 @@ const VideoGenerate = () => {
         prompts: prompt,
       });
       if (response.data.data === "Something wrong!!") {
-        toast.error("Some thing went wrong. Please try again later!", {
+        toast.error("Something went wrong. Please try again later!", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,

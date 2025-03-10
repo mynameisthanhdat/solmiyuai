@@ -15,6 +15,7 @@ const ImgaeGenerate = () => {
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
+    setImageUrl("");
     try {
       setLoading(true);
       const response = await axios.post("https://solmiyu.com/gen-image", {
@@ -22,7 +23,7 @@ const ImgaeGenerate = () => {
       });
 
       if(response.data.data === "Something wrong!!") {
-        toast.error('Some thing went wrong. Please try again later!', {
+        toast.error('Something went wrong. Please try again later!', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
