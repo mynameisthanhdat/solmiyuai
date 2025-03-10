@@ -4,6 +4,7 @@ import "./style.css";
 import { useNavigate } from "react-router";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
+import { toast } from "react-toastify";
 // import OpenAI from "openai";
 // const openai = new OpenAI();
 
@@ -19,9 +20,23 @@ const ImgaeGenerate = () => {
       const response = await axios.post("https://solmiyu.com/gen-image", {
         prompts: prompt,
       });
-      setImageUrl(response.data.data); // The URL of the generated image
 
-      console.log("response: ", response);
+      if(response.data.data === "Something wrong!!") {
+        toast.error('Some thing went wrong. Please try again later!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+        setLoading(false);
+        return;
+      } else {
+        setImageUrl(response.data.data); // The URL of the generated image
+      }
       setLoading(false);
     } catch (error) {
       console.error("Error generating image:", error);

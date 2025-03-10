@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import ReactPlayer from "react-player";
+import { toast } from "react-toastify";
 
 const VideoGenerate = () => {
   let navigate = useNavigate();
@@ -13,14 +14,26 @@ const VideoGenerate = () => {
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
+    setVideoUrl("");
     try {
       setLoading(true);
       const response = await axios.post("https://solmiyu.com/gen-gif", {
         prompts: prompt,
       });
-      setVideoUrl(response.data.data); // The URL of the generated image
-
-      console.log("response: ", response);
+      if (response.data.data === "Something wrong!!") {
+        toast.error("Some thing went wrong. Please try again later!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        setVideoUrl(response.data.data); // The URL of the generated image
+      }
       setLoading(false);
     } catch (error) {
       console.error("Error generating image:", error);
