@@ -42,7 +42,7 @@ const ImgaeGenerate = () => {
             name="w3review"
             rows="2"
             className="bg-black px-5 py-3 rounded-2xl border-[2px] border-[#ffa600] text-[18px] min-w-[420px] font-thin"
-            placeholder="Enter your prompt to create Image AI Anime"
+            placeholder="Enter your prompt to create an Image AI Anime"
             onChange={(e) => setPrompt(e.target.value)}
           >
             {prompt}
@@ -56,7 +56,7 @@ const ImgaeGenerate = () => {
               }}
               class="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-4 px-5 py-3 rounded-full hover:bg-cyan-600"
             >
-              <p className="text-[24px] font-bold">
+              <p className="text-[18px] font-bold">
                 {loading ? <BeatLoader color="#fff" /> : "GENERATE"}
               </p>
             </button>

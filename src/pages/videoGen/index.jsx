@@ -41,7 +41,7 @@ const VideoGenerate = () => {
             name="w3review"
             rows="2"
             className="bg-black px-5 py-3 rounded-2xl border-[2px] border-[#ffa600] text-[18px] min-w-[420px] font-thin"
-            placeholder="Enter your prompt to create Video AI Anime"
+            placeholder="Enter your prompt to create a Gif AI Anime"
             onChange={(e) => setPrompt(e.target.value)}
           >
             {prompt}
@@ -55,7 +55,7 @@ const VideoGenerate = () => {
               }}
               class="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-4 px-5 py-3 rounded-full hover:bg-cyan-600"
             >
-              <p className="text-[24px] font-bold">
+              <p className="text-[18px] font-bold">
                 {loading ? <BeatLoader color="#fff" /> : "GENERATE"}
               </p>
             </button>
@@ -80,14 +80,14 @@ const VideoGenerate = () => {
         <div className="flex justify-center">
           <div className="mx-auto flex items-center gap-3 md:gap-8 mt-4">
             <div
-              className="cursor-pointer bg-black shadow-lg px-4 py-2 rounded font-bold text-slate-500"
+              className="cursor-pointer bg-black shadow-lg px-4 py-2 rounded font-bold text-yellow-500"
               style={{ whiteSpace: "nowrap" }}
               onClick={() => navigate("/image-generate")}
             >
               IMAGE GENERATOR
             </div>
             <div
-              className="cursor-pointer bg-black shadow-lg px-4 py-2 rounded font-bold text-yellow-500"
+              className="cursor-pointer bg-black shadow-lg px-4 py-2 rounded font-bold text-slate-500"
               style={{ whiteSpace: "nowrap" }}
             >
               GIF GENERATOR

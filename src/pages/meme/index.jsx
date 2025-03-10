@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import Header from "../../components/header";
-import backgroundImage from '../../assets/imgs/bannerai.png';
+import backgroundImage from "../../assets/imgs/bannerai.png";
 import coin from "../../assets/imgs/coin.png";
-import girlai from "../../assets/imgs/aigirl.jpeg"
+import girlai from "../../assets/imgs/aigirl.jpeg";
 import videoFile1 from "../../assets/imgs/00045.mp4";
 import videoFile2 from "../../assets/imgs/00056.mp4";
 
@@ -44,7 +44,9 @@ const SolmiYuAIHome = () => {
             />
           </div>
           <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
-            <h2 className="text-3xl font-bold text-yellow-400">About SolmiYuAI</h2>
+            <h2 className="text-3xl font-bold text-yellow-400 uppercase">
+              About SolmiYuAI
+            </h2>
             <p className="mt-4 text-gray-600 text-lg">
               SolmiYuAI is not just another cryptocurrency—it's a cultural
               phenomenon. Born from internet memes and powered by community
@@ -56,9 +58,33 @@ const SolmiYuAIHome = () => {
         </div>
       </section>
 
-      {/* Features Demo AI */}
-      <div className="my-16 grid lg:grid-cols-3 md:grid-cols-1 gap-4">
-          <div className="mt-16 md:m-auto">
+      <div className="flex justify-center md:justify-start">
+        <div className="h-[1px] w-[60%] bg-cyan-600" />
+      </div>
+
+      {/* Image Generator Section */}
+      <section className="py-16 px-4 md:px-16 bg-[#111] mt-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+            <h2 className="text-3xl font-bold text-yellow-400 uppercase">
+              Image Generator
+            </h2>
+            <p className="mt-4 text-gray-600 text-lg">
+              Supercharge your creativity with our AI-driven anime scene
+              generator. Quickly design personalized and captivating scenes,
+              finding inspiration in seconds and bringing your stories to life
+              faster than ever before.
+            </p>
+            <div className="flex justify-center md:justify-start md:mb-0 mb-16">
+              <button
+                onClick={() => navigate("/image-generate")}
+                className="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-8 px-5 py-3 rounded-full hover:bg-cyan-600 uppercase font-bold"
+              >
+                Try now
+              </button>
+            </div>
+          </div>
+          <div className="md:w-1/2 md:pl-12">
             <ReactPlayer
               url={videoFile1}
               width={400}
@@ -67,18 +93,17 @@ const SolmiYuAIHome = () => {
               muted
             />
           </div>
-          <div className="text-center px-16">
-            <p className="xl:text-[48px] lg:text-[36px] md:text-[24px] sm:text-[16px] font-bold text-yellow-400">
-              AI VIDEO - GIF GENERATOR
-            </p>
-            <p className="text-[16px] font-bold mt-3">
-            Supercharge your creativity with our AI-driven anime scene generator. Quickly design personalized and captivating scenes, finding inspiration in seconds and bringing your stories to life faster than ever before.
-            </p>
-            <button onClick={() => navigate('/image-generate')} class="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-8 px-5 py-3 rounded-full hover:bg-cyan-600">
-              <p className="text-[24px] font-bold">TRY NOW</p>
-            </button>
-          </div>
-          <div className="mt-16 md:m-auto">
+        </div>
+      </section>
+
+      <div className="flex justify-center md:justify-end">
+        <div className="h-[1px] w-[60%] bg-cyan-600" />
+      </div>
+
+      {/* Gif Generator Section */}
+      <section className="py-16 px-4 md:px-16 bg-[#111] mt-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2">
             <ReactPlayer
               url={videoFile2}
               width={400}
@@ -87,7 +112,57 @@ const SolmiYuAIHome = () => {
               muted
             />
           </div>
+          <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+            <h2 className="text-3xl font-bold text-yellow-400 uppercase">
+              Gif Generator
+            </h2>
+            <p className="mt-4 text-gray-600 text-lg">
+              Take complete control of your anime creations with our powerful AI
+              tool. Effortlessly design custom scenes, fine-tuning every detail
+              to realize your unique vision with unmatched precision.
+            </p>
+            <div className="flex justify-center md:justify-start">
+              <button
+                onClick={() => navigate("/gif-generate")}
+                className="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-8 px-5 py-3 rounded-full hover:bg-cyan-600 uppercase font-bold"
+              >
+                Try now
+              </button>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <div className="flex justify-center md:justify-start">
+        <div className="h-[1px] w-[60%] bg-cyan-600" />
+      </div>
+
+      {/* Features Demo AI */}
+      {/* <div className="my-16 grid lg:grid-cols-3 md:grid-cols-1 gap-4">
+        <div className="mt-16 md:m-auto">
+          <ReactPlayer url={videoFile1} width={400} playing={true} loop muted />
+        </div>
+        <div className="text-center px-16">
+          <p className="xl:text-[48px] lg:text-[36px] md:text-[24px] sm:text-[16px] font-bold text-yellow-400">
+            AI VIDEO - GIF GENERATOR
+          </p>
+          <p className="text-[16px] font-bold mt-3">
+            Supercharge your creativity with our AI-driven anime scene
+            generator. Quickly design personalized and captivating scenes,
+            finding inspiration in seconds and bringing your stories to life
+            faster than ever before.
+          </p>
+          <button
+            onClick={() => navigate("/image-generate")}
+            class="bg-cyan-500 shadow-lg shadow-cyan-500/50 mt-8 px-5 py-3 rounded-full hover:bg-cyan-600"
+          >
+            <p className="text-[24px] font-bold">TRY NOW</p>
+          </button>
+        </div>
+        <div className="mt-16 md:m-auto">
+          <ReactPlayer url={videoFile2} width={400} playing={true} loop muted />
+        </div>
+      </div> */}
 
       {/* Features Section */}
       <section className="py-16 bg-[#111]">
@@ -102,7 +177,7 @@ const SolmiYuAIHome = () => {
                 alt="Community Driven"
                 className="mb-4"
               /> */}
-               <img src={coin} alt="Community Driven" className="mb-4 w-20" />
+              <img src={coin} alt="Community Driven" className="mb-4 w-20" />
               <h3 className="text-xl font-semibold text-gray-700 text-center">
                 Community Driven
               </h3>
@@ -117,8 +192,12 @@ const SolmiYuAIHome = () => {
                 alt="Innovative Use Cases"
                 className="mb-4"
               /> */}
-               <img src={coin} alt="Innovative Use Cases" className="mb-4 w-20" />
-               <h3 className="text-xl font-semibold text-gray-700 text-center">
+              <img
+                src={coin}
+                alt="Innovative Use Cases"
+                className="mb-4 w-20"
+              />
+              <h3 className="text-xl font-semibold text-gray-700 text-center">
                 Innovative Use Cases
               </h3>
               <p className="mt-2 text-gray-600 text-center">
@@ -132,7 +211,7 @@ const SolmiYuAIHome = () => {
                 alt="Viral Marketing"
                 className="mb-4"
               /> */}
-               <img src={coin} alt="Viral Marketing" className="mb-4 w-20" />
+              <img src={coin} alt="Viral Marketing" className="mb-4 w-20" />
               <h3 className="text-xl font-semibold text-gray-700 text-center">
                 Viral Marketing
               </h3>
